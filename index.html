@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -55,63 +56,114 @@
       </div>
     </nav>
 
-    <main class="container my-5 text-center">
-      <h1 class="mb-4">Cinema TOP</h1>
+    <main class="container my-5">
 
-      <div class="row g-4">
-        <div class="col-12 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img
-              src="IMG/image2.png"
-              class="card-img-top"
-              alt="Carro de Fórmula 1 da Ferrari"
+      <section class="secao-inicio">
+        <h1 class="mb-4">Cinema TOP</h1>
+        <p>
+          Explore grandes filmes, descubra novas histórias e encontre
+          seus favoritos em nosso catálogo.
+        </p>
+      </section>
+
+      <section class="catalogo">
+        <h2 class="titulo-secao">Nosso catálogo</h2>
+
+        <div class="row g-3 controles-catalogo">
+          <div class="col-md-6">
+            <input
+              type="text"
+              id="pesquisa"
+              class="form-control"
+              placeholder="Pesquisar filme..."
             />
-            <div class="card-body">
-              <h3 class="card-title h5">Poderoso Chefão 1</h3>
-              <p class="card-text">
-                O filme O Poderoso Chefão (1972), dirigido por Francis Ford
-                Coppola, acompanha a história da família Corleone, uma das
-                dinastias do crime organizado mais poderosas de Nova York nos
-                anos de 1945 a 1955.
-              </p>
-            </div>
+          </div>
+
+          <div class="col-md-3">
+            <select id="filtroGenero" class="form-select">
+              <option value="">Todos os gêneros</option>
+              <option value="Drama">Drama</option>
+              <option value="Animação">Animação</option>
+              <option value="Ação">Ação</option>
+            </select>
+          </div>
+
+          <div class="col-md-3">
+            <button
+              id="botaoFavoritos"
+              class="btn btn-destaque w-100"
+              type="button"
+            >
+              Mostrar favoritos
+            </button>
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img
-              src="IMG/image3.png"
-              class="card-img-top"
-              alt="Motor V12 da Ferrari"
+
+        <div id="mensagem"></div>
+
+        <div id="listaFilmes" class="row g-4"></div>
+      </section>
+
+      <section class="secao-formulario">
+        <h2 class="titulo-secao">Adicionar novo filme</h2>
+
+        <form id="formFilme">
+          <div class="mb-3">
+            <label for="titulo" class="form-label">Nome do filme</label>
+            <input
+              type="text"
+              id="titulo"
+              class="form-control"
+              placeholder="Digite o nome do filme"
             />
-            <div class="card-body">
-              <h3 class="card-title h5">Grandes aventuras</h3>
-              <p class="card-text">
-                Pets - A Vida Secreta dos Bichos 2 acompanha o cachorro Max
-                lidando com grandes mudanças em sua rotina: sua dona se casou e
-                teve um filho pequeno chamado Liam.
-              </p>
-            </div>
           </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img
-              src="IMG/image4.png"
-              class="card-img-top"
-              alt="Ferrari modelo clássico"
+
+          <div class="mb-3">
+            <label for="genero" class="form-label">Gênero</label>
+            <select id="genero" class="form-select">
+              <option value="">Selecione um gênero</option>
+              <option value="Drama">Drama</option>
+              <option value="Animação">Animação</option>
+              <option value="Ação">Ação</option>
+              <option value="Comédia">Comédia</option>
+              <option value="Terror">Terror</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="ano" class="form-label">Ano de lançamento</label>
+            <input
+              type="number"
+              id="ano"
+              class="form-control"
+              placeholder="Ex: 2024"
             />
-            <div class="card-body">
-              <h3 class="card-title h5">Clássicos</h3>
-              <p class="card-text">
-                O filme Homem-Aranha 2 (2004), dirigido por Sam Raimi, acompanha
-                Peter Parker (Tobey Maguire) lutando para equilibrar sua vida
-                pessoal com as responsabilidades de ser o herói.
-              </p>
-            </div>
           </div>
-        </div>
-      </div>
+
+          <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea
+              id="descricao"
+              class="form-control"
+              rows="3"
+              placeholder="Descreva o filme"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-destaque">
+            Adicionar filme
+          </button>
+        </form>
+      </section>
+
+      <section class="secao-sobre">
+        <h2 class="titulo-secao">Sobre o Cinema TOP</h2>
+        <p>
+          O Cinema TOP é um catálogo criado para reunir filmes de
+          diferentes gêneros e facilitar a descoberta de grandes histórias.
+        </p>
+      </section>
+
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
