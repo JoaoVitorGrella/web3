@@ -1,9 +1,3 @@
-// ==========================================
-// CINEMA TOP - SISTEMA DE FUNCIONALIDADES
-// ==========================================
-
-// 1. ARRAY COM OS FILMES DO CATÁLOGO
-
 let filmes = [
     {
         id: 1,
@@ -34,7 +28,7 @@ let filmes = [
     }
 ];
 
-// 2. SELECIONAR ELEMENTOS DO HTML
+
 
 const listaFilmes = document.getElementById("listaFilmes");
 const pesquisa = document.getElementById("pesquisa");
@@ -46,7 +40,6 @@ const mensagem = document.getElementById("mensagem");
 let mostrarFavoritos = false;
 
 
-// 3. FUNÇÃO PARA MOSTRAR MENSAGENS AO USUÁRIO
 
 function mostrarMensagem(texto, tipo = "success") {
 
@@ -56,14 +49,14 @@ function mostrarMensagem(texto, tipo = "success") {
 }
 
 
-// 4. FUNÇÃO PARA EXIBIR OS FILMES
+
 
 function mostrarFilmes() {
 
     const textoPesquisa = pesquisa.value.toLowerCase().trim();
     const generoEscolhido = filtroGenero.value;
 
-    // Filtrar os filmes de acordo com a pesquisa e categoria
+
 
     const filmesFiltrados = filmes.filter(function(filme) {
 
@@ -81,11 +74,9 @@ function mostrarFilmes() {
 
     });
 
-    // Limpar os cards anteriores
 
     listaFilmes.innerHTML = "";
 
-    // Verificar se existem filmes
 
     if (filmesFiltrados.length === 0) {
 
@@ -98,7 +89,6 @@ function mostrarFilmes() {
         return;
     }
 
-    // Criar um card para cada filme
 
     filmesFiltrados.forEach(function(filme) {
 
@@ -108,7 +98,7 @@ function mostrarFilmes() {
         const card = document.createElement("div");
         card.className = "card h-100 shadow-sm";
 
-        // Imagem do filme
+      
 
         const imagem = document.createElement("img");
         imagem.src = filme.imagem || "IMG/image.png";
@@ -136,7 +126,7 @@ function mostrarFilmes() {
         ano.className = "card-text";
         ano.textContent = "Ano: " + filme.ano;
 
-        // Botão de favoritos
+  
 
         const favorito = document.createElement("button");
         favorito.className = "btn btn-danger me-2 mb-2";
@@ -147,7 +137,7 @@ function mostrarFilmes() {
         favorito.dataset.acao = "favorito";
         favorito.dataset.id = filme.id;
 
-        // Botão de excluir
+   
 
         const excluir = document.createElement("button");
         excluir.className = "btn btn-danger mb-2";
@@ -156,7 +146,6 @@ function mostrarFilmes() {
         excluir.dataset.acao = "excluir";
         excluir.dataset.id = filme.id;
 
-        // Organizar os elementos
 
         corpo.append(
             titulo,
@@ -176,7 +165,6 @@ function mostrarFilmes() {
 }
 
 
-// 5. PESQUISAR FILMES PELO NOME
 
 pesquisa.addEventListener("input", function() {
 
@@ -185,7 +173,6 @@ pesquisa.addEventListener("input", function() {
 });
 
 
-// 6. FILTRAR FILMES POR GÊNERO
 
 filtroGenero.addEventListener("change", function() {
 
@@ -194,7 +181,7 @@ filtroGenero.addEventListener("change", function() {
 });
 
 
-// 7. FAVORITAR E EXCLUIR FILMES
+
 
 listaFilmes.addEventListener("click", function(event) {
 
@@ -205,7 +192,7 @@ listaFilmes.addEventListener("click", function(event) {
     const id = Number(botao.dataset.id);
     const acao = botao.dataset.acao;
 
-    // Encontrar o filme selecionado
+    
 
     const filme = filmes.find(function(item) {
 
@@ -215,7 +202,7 @@ listaFilmes.addEventListener("click", function(event) {
 
     if (!filme) return;
 
-    // Adicionar ou remover dos favoritos
+    
 
     if (acao === "favorito") {
 
@@ -233,7 +220,7 @@ listaFilmes.addEventListener("click", function(event) {
 
     }
 
-    // Excluir filme do catálogo
+   
 
     if (acao === "excluir") {
 
@@ -258,7 +245,7 @@ listaFilmes.addEventListener("click", function(event) {
 });
 
 
-// 8. MOSTRAR SOMENTE OS FILMES FAVORITOS
+
 
 botaoFavoritos.addEventListener("click", function() {
 
@@ -279,15 +266,15 @@ botaoFavoritos.addEventListener("click", function() {
 });
 
 
-// 9. CADASTRAR NOVOS FILMES
+
 
 formulario.addEventListener("submit", function(event) {
 
-    // Impedir que a página atualize
+    
 
     event.preventDefault();
 
-    // Pegar os valores digitados
+  
 
     const titulo = document.getElementById("titulo").value.trim();
     const genero = document.getElementById("genero").value;
@@ -314,7 +301,6 @@ formulario.addEventListener("submit", function(event) {
 
     }
 
-    // Criar um novo objeto de filme
 
     const novoFilme = {
 
@@ -328,11 +314,11 @@ formulario.addEventListener("submit", function(event) {
 
     };
 
-    // Adicionar o filme ao array
+  
 
     filmes.push(novoFilme);
 
-    // Limpar os campos
+    
 
     formulario.reset();
 
@@ -342,7 +328,7 @@ formulario.addEventListener("submit", function(event) {
     mostrarFavoritos = false;
     botaoFavoritos.textContent = "♡ Ver favoritos";
 
-    // Atualizar o catálogo
+    
 
     mostrarFilmes();
 
@@ -351,6 +337,6 @@ formulario.addEventListener("submit", function(event) {
 });
 
 
-// 10. INICIAR O CATÁLOGO
+
 
 mostrarFilmes();
