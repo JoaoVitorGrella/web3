@@ -12,8 +12,6 @@
   --cinza-texto: #c2c5ca;
 }
 
-/* CONFIGURAÇÕES GERAIS */
-
 body {
   background-color: var(--fundo);
   color: var(--branco);
@@ -21,8 +19,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* TÍTULOS */
 
 h1,
 h2,
@@ -42,8 +38,6 @@ h2 {
   color: var(--cor-destaque);
 }
 
-/* BANNER */
-
 .banner-topo {
   width: 100%;
   background-color: #17191d;
@@ -58,8 +52,6 @@ h2 {
   object-position: center;
   display: block;
 }
-
-/* MENU */
 
 .navbar {
   background-color: #202329 !important;
@@ -98,8 +90,6 @@ h2 {
   filter: brightness(0) invert(1);
 }
 
-/* CARDS DE FILMES */
-
 .card {
   background-color: var(--preto-card);
   border: 1px solid var(--cinza-borda);
@@ -136,8 +126,6 @@ h2 {
   transform: scale(1.02);
 }
 
-/* BOTÕES */
-
 .btn-danger {
   background-color: var(--cor-principal);
   border-color: var(--cor-destaque);
@@ -158,8 +146,6 @@ h2 {
   background-color: var(--cor-secundaria) !important;
   color: var(--branco);
 }
-
-/* FORMULÁRIOS */
 
 form {
   background-color: var(--preto-card) !important;
@@ -196,8 +182,6 @@ form {
   box-shadow: 0 0 10px rgba(214, 181, 109, 0.2) !important;
 }
 
-/* BOTÃO DO FORMULÁRIO */
-
 form button[type="submit"] {
   background-color: var(--cor-principal) !important;
   border-color: var(--cor-destaque) !important;
@@ -216,15 +200,11 @@ form button[type="submit"]:hover {
   transform: translateY(-2px);
 }
 
-/* ALERTAS */
-
 .alert-danger {
   background-color: #30363d;
   border-color: var(--cor-destaque);
   color: var(--branco);
 }
-
-/* TABELAS */
 
 .secao-tabela .table-responsive {
   border: 1px solid var(--cinza-borda);
@@ -255,8 +235,6 @@ form button[type="submit"]:hover {
   color: var(--branco);
 }
 
-/* CARDS DESTACADOS */
-
 .card.border-danger {
   background-color: var(--preto-card) !important;
   border: 1px solid var(--cor-destaque) !important;
@@ -268,14 +246,10 @@ form button[type="submit"]:hover {
   box-shadow: 0 8px 20px rgba(214, 181, 109, 0.2);
 }
 
-/* TEXTOS */
-
 .text-muted,
 p.text-muted {
   color: var(--cinza-texto) !important;
 }
-
-/* RODAPÉ */
 
 footer {
   background-color: #202329 !important;
@@ -283,8 +257,6 @@ footer {
   color: var(--cinza-texto);
   font-size: 0.9rem;
 }
-
-/* LINKS */
 
 a {
   transition: color 0.3s ease;
@@ -294,9 +266,59 @@ a:hover {
   color: var(--cor-destaque);
 }
 
-/* SELEÇÃO DE TEXTO */
-
 ::selection {
   background-color: var(--cor-destaque);
   color: #17191d;
+}
+
+main.container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 35px;
+}
+
+main.container > section {
+  display: block;
+  position: static;
+  width: 100%;
+  height: auto;
+  flex: 0 0 auto;
+  margin: 0 !important;
+}
+
+.secao-inicio,
+.catalogo,
+.secao-formulario,
+.secao-sobre {
+  width: 100%;
+  position: relative;
+}
+
+.controles-catalogo {
+  margin-bottom: 20px;
+}
+
+#listaFilmes {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.secao-formulario form {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.titulo-secao {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  main.container {
+    gap: 25px;
+  }
+
+  form {
+    padding: 1.2rem !important;
+  }
 }
